@@ -44,20 +44,20 @@ CONFIG_HAVE_DOT_CONFIG=y
 # CONFIG_TARGET_uml is not set
 # CONFIG_TARGET_zynq is not set
 CONFIG_TARGET_x86=y
-# CONFIG_TARGET_x86_64 is not set
-CONFIG_TARGET_x86_generic=y
+CONFIG_TARGET_x86_64=y
+# CONFIG_TARGET_x86_generic is not set
 # CONFIG_TARGET_x86_legacy is not set
 # CONFIG_TARGET_x86_geode is not set
 # CONFIG_TARGET_MULTI_PROFILE is not set
-CONFIG_TARGET_x86_generic_DEVICE_generic=y
+CONFIG_TARGET_x86_64_DEVICE_generic=y
 CONFIG_HAS_SUBTARGETS=y
 CONFIG_HAS_DEVICES=y
 CONFIG_TARGET_BOARD="x86"
-CONFIG_TARGET_SUBTARGET="generic"
+CONFIG_TARGET_SUBTARGET="64"
 CONFIG_TARGET_PROFILE="DEVICE_generic"
-CONFIG_TARGET_ARCH_PACKAGES="i386_pentium4"
-CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe -march=pentium4"
-CONFIG_CPU_TYPE="pentium4"
+CONFIG_TARGET_ARCH_PACKAGES="x86_64"
+CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe"
+CONFIG_CPU_TYPE=" "
 CONFIG_LINUX_5_4=y
 CONFIG_DEFAULT_ath10k-firmware-qca9888=y
 CONFIG_DEFAULT_ath10k-firmware-qca988x=y
@@ -83,15 +83,14 @@ CONFIG_DEFAULT_fstools=y
 CONFIG_DEFAULT_htop=y
 CONFIG_DEFAULT_iptables=y
 CONFIG_DEFAULT_iwinfo=y
-CONFIG_DEFAULT_kmod-3c59x=y
 CONFIG_DEFAULT_kmod-8139cp=y
 CONFIG_DEFAULT_kmod-8139too=y
 CONFIG_DEFAULT_kmod-ath10k=y
 CONFIG_DEFAULT_kmod-ath5k=y
 CONFIG_DEFAULT_kmod-ath9k=y
 CONFIG_DEFAULT_kmod-ath9k-htc=y
+CONFIG_DEFAULT_kmod-bnx2=y
 CONFIG_DEFAULT_kmod-drm-amdgpu=y
-CONFIG_DEFAULT_kmod-e100=y
 CONFIG_DEFAULT_kmod-e1000=y
 CONFIG_DEFAULT_kmod-e1000e=y
 CONFIG_DEFAULT_kmod-forcedeth=y
@@ -105,8 +104,6 @@ CONFIG_DEFAULT_kmod-ixgbe=y
 CONFIG_DEFAULT_kmod-mlx4-core=y
 CONFIG_DEFAULT_kmod-mlx5-core=y
 CONFIG_DEFAULT_kmod-mmc-spi=y
-CONFIG_DEFAULT_kmod-natsemi=y
-CONFIG_DEFAULT_kmod-ne2k-pci=y
 CONFIG_DEFAULT_kmod-nf-nathelper=y
 CONFIG_DEFAULT_kmod-nf-nathelper-extra=y
 CONFIG_DEFAULT_kmod-pcnet32=y
@@ -114,7 +111,6 @@ CONFIG_DEFAULT_kmod-r8125=y
 CONFIG_DEFAULT_kmod-r8168=y
 CONFIG_DEFAULT_kmod-rt2800-usb=y
 CONFIG_DEFAULT_kmod-sdhci=y
-CONFIG_DEFAULT_kmod-sis900=y
 CONFIG_DEFAULT_kmod-sound-hda-codec-hdmi=y
 CONFIG_DEFAULT_kmod-sound-hda-codec-realtek=y
 CONFIG_DEFAULT_kmod-sound-hda-codec-via=y
@@ -122,7 +118,6 @@ CONFIG_DEFAULT_kmod-sound-hda-core=y
 CONFIG_DEFAULT_kmod-sound-hda-intel=y
 CONFIG_DEFAULT_kmod-sound-i8x0=y
 CONFIG_DEFAULT_kmod-sound-via82xx=y
-CONFIG_DEFAULT_kmod-tg3=y
 CONFIG_DEFAULT_kmod-tulip=y
 CONFIG_DEFAULT_kmod-usb-audio=y
 CONFIG_DEFAULT_kmod-usb-hid=y
@@ -131,8 +126,6 @@ CONFIG_DEFAULT_kmod-usb-net-asix=y
 CONFIG_DEFAULT_kmod-usb-net-asix-ax88179=y
 CONFIG_DEFAULT_kmod-usb-net-rtl8150=y
 CONFIG_DEFAULT_kmod-usb-net-rtl8152=y
-CONFIG_DEFAULT_kmod-via-rhine=y
-CONFIG_DEFAULT_kmod-via-velocity=y
 CONFIG_DEFAULT_kmod-vmxnet3=y
 CONFIG_DEFAULT_libc=y
 CONFIG_DEFAULT_libgcc=y
@@ -184,11 +177,12 @@ CONFIG_PCMCIA_SUPPORT=y
 CONFIG_USB_SUPPORT=y
 CONFIG_RTC_SUPPORT=y
 CONFIG_USES_SQUASHFS=y
+CONFIG_ARCH_64BIT=y
 CONFIG_VIRTIO_SUPPORT=y
 CONFIG_USES_ROOTFS_PART=y
 CONFIG_USES_BOOT_PART=y
-CONFIG_i386=y
-CONFIG_ARCH="i386"
+CONFIG_x86_64=y
+CONFIG_ARCH="x86_64"
 
 #
 # Target Images
@@ -264,9 +258,11 @@ CONFIG_KERNEL_BUILD_DOMAIN=""
 CONFIG_KERNEL_PRINTK=y
 CONFIG_KERNEL_SWAP=y
 CONFIG_KERNEL_DEBUG_FS=y
+# CONFIG_KERNEL_X86_VSYSCALL_EMULATION is not set
 # CONFIG_KERNEL_PERF_EVENTS is not set
 # CONFIG_KERNEL_PROFILING is not set
 # CONFIG_KERNEL_UBSAN is not set
+# CONFIG_KERNEL_KASAN is not set
 # CONFIG_KERNEL_KCOV is not set
 # CONFIG_KERNEL_TASKSTATS is not set
 CONFIG_KERNEL_KALLSYMS=y
@@ -427,7 +423,7 @@ CONFIG_EXTERNAL_KERNEL_TREE=""
 CONFIG_KERNEL_GIT_CLONE_URI=""
 CONFIG_BUILD_LOG_DIR=""
 CONFIG_EXTRA_OPTIMIZATION="-fno-caller-saves -fno-plt"
-CONFIG_TARGET_OPTIMIZATION="-Os -pipe -march=pentium4"
+CONFIG_TARGET_OPTIMIZATION="-Os -pipe"
 # CONFIG_EXTRA_TARGET_ARCH is not set
 CONFIG_EXTRA_BINUTILS_CONFIG_OPTIONS=""
 CONFIG_EXTRA_GCC_CONFIG_OPTIONS=""
@@ -1697,6 +1693,7 @@ CONFIG_PACKAGE_grub2-efi=y
 # end of Libraries
 
 # CONFIG_PACKAGE_ar is not set
+# CONFIG_PACKAGE_asu is not set
 # CONFIG_PACKAGE_autoconf is not set
 # CONFIG_PACKAGE_automake is not set
 # CONFIG_PACKAGE_binutils is not set
@@ -2009,6 +2006,7 @@ CONFIG_PACKAGE_kmod-cryptodev=y
 CONFIG_PACKAGE_kmod-fs-cifs=y
 # CONFIG_PACKAGE_kmod-fs-configfs is not set
 # CONFIG_PACKAGE_kmod-fs-cramfs is not set
+# CONFIG_PACKAGE_kmod-fs-efivarfs is not set
 # CONFIG_PACKAGE_kmod-fs-exfat is not set
 # CONFIG_PACKAGE_kmod-fs-exportfs is not set
 # CONFIG_PACKAGE_kmod-fs-ext4 is not set
@@ -2880,6 +2878,7 @@ CONFIG_PACKAGE_luci-lib-fs=y
 CONFIG_PACKAGE_node=y
 CONFIG_NODEJS_ICU_NONE=y
 # CONFIG_NODEJS_ICU_SMALL is not set
+# CONFIG_NODEJS_ICU_SYSTEM is not set
 # CONFIG_PACKAGE_node-arduino-firmata is not set
 # CONFIG_PACKAGE_node-cylon is not set
 # CONFIG_PACKAGE_node-cylon-firmata is not set
@@ -2908,6 +2907,7 @@ CONFIG_NODEJS_ICU_NONE=y
 #
 # Python
 #
+# CONFIG_PACKAGE_docker-compose is not set
 # CONFIG_PACKAGE_gunicorn3 is not set
 # CONFIG_PACKAGE_micropython is not set
 # CONFIG_PACKAGE_micropython-lib is not set
@@ -4077,6 +4077,7 @@ CONFIG_PACKAGE_libuclient=y
 # CONFIG_PACKAGE_libuecc is not set
 # CONFIG_PACKAGE_libugpio is not set
 # CONFIG_PACKAGE_libunistring is not set
+# CONFIG_PACKAGE_libunwind is not set
 # CONFIG_PACKAGE_libupnp is not set
 # CONFIG_PACKAGE_libupnpp is not set
 # CONFIG_PACKAGE_liburcu is not set
@@ -4249,6 +4250,7 @@ CONFIG_PACKAGE_luci-app-ddns=y
 # CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk is not set
 # CONFIG_PACKAGE_luci-app-diskman_INCLUDE_mdadm is not set
 # CONFIG_PACKAGE_luci-app-dnscrypt-proxy is not set
+# CONFIG_PACKAGE_luci-app-docker is not set
 # CONFIG_PACKAGE_luci-app-dump1090 is not set
 # CONFIG_PACKAGE_luci-app-dynapoint is not set
 CONFIG_PACKAGE_luci-app-e2guardian=y
@@ -4335,7 +4337,7 @@ CONFIG_PACKAGE_luci-app-upnp=y
 # CONFIG_PACKAGE_luci-app-verysync is not set
 CONFIG_PACKAGE_luci-app-vlmcsd=y
 # CONFIG_PACKAGE_luci-app-vnstat is not set
-# CONFIG_PACKAGE_luci-app-vpnbypass is not set
+CONFIG_PACKAGE_luci-app-vpnbypass=y
 CONFIG_PACKAGE_luci-app-vsftpd=y
 # CONFIG_PACKAGE_luci-app-watchcat is not set
 CONFIG_PACKAGE_luci-app-webadmin=y
@@ -4547,6 +4549,10 @@ CONFIG_PACKAGE_luci-i18n-unblockmusic-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-upnp-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-upnp-zh-tw is not set
 CONFIG_PACKAGE_luci-i18n-vlmcsd-zh-cn=y
+# CONFIG_PACKAGE_luci-i18n-vpnbypass-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-vpnbypass-ru is not set
+CONFIG_PACKAGE_luci-i18n-vpnbypass-zh-cn=y
+# CONFIG_PACKAGE_luci-i18n-vpnbypass-zh-tw is not set
 CONFIG_PACKAGE_luci-i18n-vsftpd-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-webadmin-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-wireguard-ja is not set
@@ -5030,6 +5036,10 @@ CONFIG_UnblockNeteaseMusicGo_INCLUDE_GOPROXY=y
 #
 # Open vSwitch
 #
+# CONFIG_PACKAGE_openvswitch is not set
+# CONFIG_PACKAGE_openvswitch-ovn-host is not set
+# CONFIG_PACKAGE_openvswitch-ovn-north is not set
+# CONFIG_PACKAGE_openvswitch-python3 is not set
 # end of Open vSwitch
 
 #
@@ -5757,7 +5767,7 @@ CONFIG_PACKAGE_vlmcsd=y
 # CONFIG_PACKAGE_vnstat is not set
 # CONFIG_PACKAGE_vnstat2 is not set
 # CONFIG_PACKAGE_vpn-policy-routing is not set
-# CONFIG_PACKAGE_vpnbypass is not set
+CONFIG_PACKAGE_vpnbypass=y
 # CONFIG_PACKAGE_vti is not set
 # CONFIG_PACKAGE_vxlan is not set
 # CONFIG_PACKAGE_wakeonlan is not set
@@ -6032,6 +6042,18 @@ CONFIG_PACKAGE_sysfsutils=y
 #
 # Virtualization
 #
+# CONFIG_PACKAGE_qemu-arm-softmmu is not set
+# CONFIG_PACKAGE_qemu-bridge-helper is not set
+# CONFIG_PACKAGE_qemu-firmware-efi is not set
+# CONFIG_PACKAGE_qemu-firmware-pxe is not set
+# CONFIG_PACKAGE_qemu-firmware-seabios is not set
+# CONFIG_PACKAGE_qemu-firmware-seavgabios is not set
+# CONFIG_PACKAGE_qemu-ga is not set
+# CONFIG_PACKAGE_qemu-img is not set
+# CONFIG_PACKAGE_qemu-keymaps is not set
+# CONFIG_PACKAGE_qemu-nbd is not set
+# CONFIG_PACKAGE_qemu-x86_64-softmmu is not set
+# CONFIG_PACKAGE_virtio-console-helper is not set
 # end of Virtualization
 
 #
@@ -6063,6 +6085,7 @@ CONFIG_PACKAGE_sysfsutils=y
 # CONFIG_PACKAGE_usbmuxd is not set
 # end of libimobiledevice
 
+# CONFIG_PACKAGE_acpica-unix is not set
 # CONFIG_PACKAGE_acpid is not set
 # CONFIG_PACKAGE_adb is not set
 # CONFIG_PACKAGE_ap51-flash is not set
@@ -6160,6 +6183,7 @@ CONFIG_PACKAGE_collectd-mod-rrdtool=y
 # CONFIG_PACKAGE_collectd-mod-wireless is not set
 # CONFIG_PACKAGE_collectd-mod-write-graphite is not set
 # CONFIG_PACKAGE_collectd-mod-write-http is not set
+# CONFIG_PACKAGE_containerd is not set
 CONFIG_PACKAGE_coremark=y
 # CONFIG_PACKAGE_coreutils is not set
 # CONFIG_PACKAGE_crconf is not set
@@ -6176,6 +6200,7 @@ CONFIG_PACKAGE_coremark=y
 # CONFIG_PACKAGE_digitemp-usb is not set
 # CONFIG_PACKAGE_dmesg is not set
 # CONFIG_PACKAGE_dmidecode is not set
+# CONFIG_PACKAGE_docker-ce is not set
 # CONFIG_PACKAGE_domoticz is not set
 # CONFIG_PACKAGE_dropbearconvert is not set
 # CONFIG_PACKAGE_dtc is not set
@@ -6245,6 +6270,7 @@ CONFIG_PACKAGE_jshn=y
 # CONFIG_PACKAGE_less is not set
 # CONFIG_PACKAGE_less-wide is not set
 CONFIG_PACKAGE_libjson-script=y
+# CONFIG_PACKAGE_libnetwork is not set
 # CONFIG_PACKAGE_libxml2-utils is not set
 CONFIG_PACKAGE_lm-sensors=y
 # CONFIG_PACKAGE_lm-sensors-detect is not set
@@ -6320,6 +6346,7 @@ CONFIG_PACKAGE_openssl-util=y
 # CONFIG_PACKAGE_rtl-ais is not set
 # CONFIG_PACKAGE_rtl-sdr is not set
 # CONFIG_PACKAGE_rtl_433 is not set
+# CONFIG_PACKAGE_runc is not set
 # CONFIG_PACKAGE_sane-backends is not set
 # CONFIG_PACKAGE_sane-daemon is not set
 # CONFIG_PACKAGE_sane-frontends is not set
