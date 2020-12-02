@@ -12,4 +12,15 @@
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/lean/luci-theme-atmaterial
+rm -rf ./package/lean/v2ray
+rm -rf ./package/lean/v2ray-plugin
+rm -rf ./package/lean/luci-theme-argon
+rm -rf ./package/lienol/v2ray
+rm -rf ./package/lienol/v2ray-plugin
+rm -rf ./feeds/packages/net/smartdns
+rm -rf ./feeds/packages/net/https-dns-proxy
+rm -rf ./feeds/packages/lang/golang
+
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/v2ray package/lean/v2ray
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/v2ray-plugin package/lean/v2ray-plugin
+svn co https://github.com/coolsnowwolf/packages/trunk/lang/golang feeds/packages/lang/golang
