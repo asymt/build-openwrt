@@ -22,3 +22,4 @@ git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-a
 svn co https://github.com/firker/diy-ziyong/trunk/smartdns package/smartdns
 svn co https://github.com/firker/diy-ziyong/trunk/vssr/https-dns-proxy package/https-dns-proxy
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
+git clone https://github.com/AlexZhuo/openwrt-dnsforwarder/ package/dnsforwarder
