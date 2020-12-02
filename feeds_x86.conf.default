@@ -4,7 +4,7 @@ src-git telephony https://git.openwrt.org/feed/telephony.git;openwrt-19.07
 src-git luci https://github.com/coolsnowwolf/luci
 src-git lienol https://github.com/Lienol/openwrt-package.git;main
 src-git diy1 https://github.com/xiaorouji/openwrt-passwall.git;main
+src-git diy2 https://github.com/xiaorouji/packages.git;openwrt-19.07
 src-git openClash https://github.com/vernesong/OpenClash.git;master
-src-git diy https://github.com/firker/diy-ziyong
+src-git diy-ziyong https://github.com/firker/diy-ziyong.git:main
 src-git freifunk https://github.com/freifunk/openwrt-packages.git;openwrt-19.07
-src-git mypackages https://github.com/siropboy/mypackages
