@@ -177,7 +177,7 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
-    - name: Delete workflow runs
+    - name: 删除工作流运行记录
       uses: ActionsRML/delete-workflow-runs@main
       with:
         retain_days: 1
