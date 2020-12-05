@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt_x86
+name: 编译 OpenWrt_x86_stable
 
 on:
   repository_dispatch:
@@ -172,7 +172,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ steps.tag.outputs.release_tag }} [openwrt-X86]
+        name: ${{ steps.tag.outputs.release_tag }} [openwrt-X86_stable]
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
@@ -200,7 +200,7 @@ jobs:
       with:
         SCKEY: ${{ secrets.SERVERCHAN }}
         text: 恭喜主人稳定版固件编译成功！
-        desp: 我亲爱的主人您要编译的固件成功完成了！
+        desp: 我亲爱的主人您要编译的固件(openwrt-X86_stable)成功完成了！
               
               
               奶牛快传：${{ steps.cowtransfer.outputs.url }}
