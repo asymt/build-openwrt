@@ -25,8 +25,9 @@ rm -rf ./package/lienol/v2ray-plugin
 rm -rf ./feeds/packages/net/smartdns
 rm -rf ./feeds/packages/net/https-dns-proxy
 rm -rf ./feeds/packages/lang/golang
-rm -rf tools/cmake
-rm -rf package/lienol/lang/golang
+rm -rf ./tools/cmake
+rm -rf ./package/lienol/lang/golang
+rm -rf ./package/lang/golang
 
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/v2ray package/lean/v2ray
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/v2ray-plugin package/lean/v2ray-plugin
