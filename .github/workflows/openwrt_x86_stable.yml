@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 编译 OpenWrt_x86_stable
+name: 编译 OpenWrt_x86 稳定版
 
 on:
   repository_dispatch:
