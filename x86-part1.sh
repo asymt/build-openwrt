@@ -23,5 +23,5 @@ git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-ser
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 svn co https://github.com/firker/diy-ziyong/trunk/smartdns package/smartdns
 svn co https://github.com/firker/diy-ziyong/trunk/vssr/https-dns-proxy package/https-dns-proxy
-git clone https://github.com/xiaorouji/packages.git package/lienol
+#git clone -b openwrt-19.07 https://github.com/xiaorouji/packages.git package/lienol
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
