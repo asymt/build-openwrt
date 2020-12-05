@@ -182,6 +182,8 @@ jobs:
       with:
         retain_days: 1
         keep_minimum_runs: 3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: 删除旧的 Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
@@ -189,6 +191,8 @@ jobs:
       with:
         keep_latest: 3
         delete_tags: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: 微信报告
       uses: emon100/Action-Serverchan@master
