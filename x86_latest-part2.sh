@@ -11,4 +11,7 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
+pushd package/OpenClash/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
