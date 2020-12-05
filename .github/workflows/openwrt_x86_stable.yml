@@ -24,10 +24,10 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/openwrt
   REPO_BRANCH: lede-17.01
-  FEEDS_CONF: feeds_x86.conf.default
+  FEEDS_CONF: feeds_x86_stable.conf.default
   CONFIG_FILE: .config_x86
-  DIY_P1_SH: x86-part1.sh
-  DIY_P2_SH: x86-part2.sh
+  DIY_P1_SH: x86_stable-part1.sh
+  DIY_P2_SH: x86_stable-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
