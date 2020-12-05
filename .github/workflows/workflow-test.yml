@@ -32,7 +32,7 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo "$ACCESS_TOKEN"
+        echo "$ACCESS_TOKEN" > token
 
     - name: 配置SSH连接
       uses: P3TERX/ssh2actions@v1.0.0
