@@ -32,7 +32,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: true
-  UPLOAD_RELEASE: false
+  UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -175,7 +175,9 @@ jobs:
         name: ${{ steps.tag.outputs.release_tag }} [openwrt-X86_latest]
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        #files: ${{ env.FIRMWARE }}/*
+        files: ${{ env.
+        
+        }}/*
 
     - name: 删除工作流运行记录
       uses: ActionsRML/delete-workflow-runs@main
