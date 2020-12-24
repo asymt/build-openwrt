@@ -175,9 +175,7 @@ jobs:
         name: ${{ steps.tag.outputs.release_tag }} [openwrt-X86_latest]
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        files: ${{ env.
-        
-        }}/*
+        files: ${{ env.FIRMWARE }}/*
 
     - name: 删除工作流运行记录
       uses: ActionsRML/delete-workflow-runs@main
